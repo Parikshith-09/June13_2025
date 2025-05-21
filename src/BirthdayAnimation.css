@@ -1,0 +1,284 @@
+.birthday-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.animation-wrapper {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.animation-wrapper > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.box-animation {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+}
+
+.box-animation > div {
+  width: 60% !important;
+  height: 100% !important;
+  transform: translateY(20%);
+}
+
+.celebration-animation {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 3;
+}
+
+.celebration-animation > div {
+  width: 100% !important;
+  height: 100% !important;
+  transform: translateY(-20%);
+}
+
+.candle-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translateY(-15%);
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+  z-index: 3;
+}
+
+.candle-wrapper.fade-out {
+  opacity: 0;
+}
+
+.candle-wrapper > div {
+  width: 30% !important;
+  height: 30% !important;
+}
+
+.blow-button {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease;
+  z-index: 20;
+  animation: pulse 2s infinite;
+}
+
+.blow-button:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.blow-button:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(255, 107, 107, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  }
+}
+
+.birthday-message {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 10;
+  opacity: 1;
+}
+
+.birthday-message h1 {
+  color: #ff6b6b;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.birthday-message p {
+  color: #4a4a4a;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Large screens (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .birthday-message h1 {
+    font-size: 4rem;
+  }
+
+  .birthday-message p {
+    font-size: 2rem;
+  }
+
+  .candle-wrapper {
+    transform: translateY(-20%);
+  }
+
+  .blow-button {
+    font-size: 1.8rem;
+    padding: 18px 36px;
+  }
+
+  .box-animation > div {
+    width: 30% !important;
+  }
+}
+
+/* Medium screens (tablets, 768px to 1199px) */
+@media (max-width: 1199px) {
+  .birthday-message h1 {
+    font-size: 3.5rem;
+  }
+
+  .birthday-message p {
+    font-size: 1.75rem;
+  }
+
+  .candle-wrapper {
+    transform: translateY(-18%);
+  }
+
+  .blow-button {
+    font-size: 1.6rem;
+    padding: 16px 32px;
+  }
+
+  .box-animation > div {
+    width: 35% !important;
+  }
+}
+
+/* Small screens (landscape phones, 576px to 767px) */
+@media (max-width: 767px) {
+  .birthday-message h1 {
+    font-size: 2.5rem;
+  }
+
+  .birthday-message p {
+    font-size: 1.25rem;
+  }
+
+  .candle-wrapper {
+    transform: translateY(-15%);
+  }
+
+  .blow-button {
+    font-size: 1.3rem;
+    padding: 14px 28px;
+  }
+
+  .box-animation > div {
+    width: 40% !important;
+  }
+}
+
+/* Extra small screens (portrait phones, up to 575px) */
+@media (max-width: 575px) {
+  .birthday-message h1 {
+    font-size: 2rem;
+  }
+
+  .birthday-message p {
+    font-size: 1rem;
+  }
+
+  .candle-wrapper {
+    transform: translateY(-12%);
+  }
+
+  .blow-button {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    bottom: 20%;
+  }
+
+  .box-animation > div {
+    width: 45% !important;
+  }
+}
+
+/* For very small screens (height-based) */
+@media (max-height: 600px) {
+  .birthday-message {
+    bottom: 5%;
+  }
+
+  .birthday-message h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .birthday-message p {
+    font-size: 0.9rem;
+  }
+
+  .candle-wrapper {
+    transform: translateY(-10%);
+  }
+
+  .blow-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    bottom: 15%;
+  }
+
+  .box-animation > div {
+    width: 50% !important;
+  }
+} 
