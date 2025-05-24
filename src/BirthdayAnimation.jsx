@@ -4,6 +4,7 @@ import cakeAnimation from './assets/lottie/Cake_lottie.json';
 import boxAnimation from './assets/lottie/GiftBox_lottie.json';
 import celebrationAnimation from './assets/lottie/Celebration_lottie.json';
 import candleAnimation from './assets/lottie/Candle_lottie.json';
+import FlashCardPlayer from './components/FlashCardPlayer.jsx';
 import './BirthdayAnimation.css';
 
 const BirthdayAnimation = () => {
@@ -114,6 +115,7 @@ const BirthdayAnimation = () => {
           <p>Wishing you a day filled with happiness and joy!</p>
         </div>
       )}
+      <FlashCardPlayer />
     </div>
   );
 };
